@@ -1,25 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="5" total="15" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-04T11:37:43 EET" name="Default suite" finished-at="2023-12-04T11:37:51 EET" duration-ms="8002">
+  <suite started-at="2023-12-07T10:44:07 EET" name="Default suite" finished-at="2023-12-07T10:44:34 EET" duration-ms="26556">
     <groups>
     </groups>
-    <test started-at="2023-12-04T11:37:43 EET" name="Default test" finished-at="2023-12-04T11:37:51 EET" duration-ms="8002">
+    <test started-at="2023-12-07T10:44:07 EET" name="Default test" finished-at="2023-12-07T10:44:34 EET" duration-ms="26556">
       <class name="MyTestCases">
-        <test-method is-config="true" signature="myBeforeTest()[pri:0, instance:MyTestCases@5ad10c1a]" started-at="2023-12-04T11:37:43 EET" name="myBeforeTest" finished-at="2023-12-04T11:37:50 EET" duration-ms="6463" status="PASS">
+        <test-method is-config="true" signature="myBeforeTest()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:07 EET" name="myBeforeTest" finished-at="2023-12-07T10:44:15 EET" duration-ms="7164" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- myBeforeTest -->
-        <test-method signature="checktheLanguage()[pri:0, instance:MyTestCases@5ad10c1a]" started-at="2023-12-04T11:37:50 EET" name="checktheLanguage" finished-at="2023-12-04T11:37:51 EET" duration-ms="1290" status="PASS">
+        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:15 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:16 EET" duration-ms="1736" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checktheLanguage -->
-        <test-method signature="thisisToTestTheCurrency()[pri:0, instance:MyTestCases@5ad10c1a]" started-at="2023-12-04T11:37:51 EET" name="thisisToTestTheCurrency" finished-at="2023-12-04T11:37:51 EET" duration-ms="109" status="PASS">
+        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
+        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:17 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:19 EET" duration-ms="2285" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- thisisToTestTheCurrency -->
-        <test-method is-config="true" signature="myAfterTest()[pri:0, instance:MyTestCases@5ad10c1a]" started-at="2023-12-04T11:37:51 EET" name="myAfterTest" finished-at="2023-12-04T11:37:51 EET" duration-ms="2" status="PASS">
+        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
+        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:19 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:20 EET" duration-ms="1593" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
+        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:20 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:22 EET" duration-ms="1536" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
+        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:22 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:24 EET" duration-ms="2465" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
+        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:24 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:26 EET" duration-ms="1629" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
+        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:26 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:28 EET" duration-ms="1734" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
+        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:28 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:30 EET" duration-ms="2090" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
+        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:30 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:32 EET" duration-ms="2186" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
+        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:32 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:34 EET" duration-ms="1961" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
+        <test-method is-config="true" signature="myAfterTest()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:34 EET" name="myAfterTest" finished-at="2023-12-07T10:44:34 EET" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- myAfterTest -->
