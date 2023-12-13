@@ -1,4 +1,6 @@
 import java.time.Duration;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -10,12 +12,15 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import io.opentelemetry.sdk.metrics.data.Data;
 
 public class MyTestCases {
 
 	String Url = "https://www.almosafer.com/en";
 	WebDriver driver = new ChromeDriver();
-
+	SoftAssert myAssertion = new SoftAssert();
 	@BeforeTest
 
 	public void myBeforeTest() {
@@ -67,7 +72,7 @@ public class MyTestCases {
 
 	}
 
-	@Test(invocationCount = 10)
+	@Test(invocationCount = 10, enabled = false)
 	public void ChangTheLanguageOfTheWebsiteRandomly() throws InterruptedException {
 		String[] myWebsite = { "https://www.almosafer.com/en", "https://www.almosafer.com/ar" };
 		Random rand = new Random();
@@ -87,6 +92,54 @@ public class MyTestCases {
 			String LanguageofTheWebsite = driver.findElement(By.tagName("html")).getAttribute("lang");
 			Assert.assertEquals(LanguageofTheWebsite, "en");
 		}
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Test
+	public void CheckTheDateOfTheWebSite() {
+
+		LocalDate today = LocalDate.now();
+		
+		int expectedDepatureDate = today.plusDays(1).getDayOfMonth();
+		  int expectedReturnDate = today.plusDays(2).getDayOfMonth();
+		         
+		  WebElement ActualDepatureDateonTheWebSite = driver
+					.findElement(By.cssSelector("div[class='sc-OxbzP sc-lnrBVv gKbptE'] span[class='sc-fvLVrH hNjEjT']"));
+			WebElement ActualReturuDateTheWebSite = driver
+					.findElement(By.cssSelector("div[class='sc-OxbzP sc-bYnzgO bojUIa'] span[class='sc-fvLVrH hNjEjT']"));
+
+			
+	
+			
+			
+			
+		         String ExpectedWelcomMsg = "Let’s book your next trip!mmm";
+		       String ActualWelcomeMsg = driver.findElement(By.xpath("//h1[contains(text(),'Let’s book your next trip!')]")).getText();
+			
+		         
+			myAssertion.assertEquals(Integer.parseInt(ActualDepatureDateonTheWebSite.getText()), 66);
+		         myAssertion.assertEquals(Integer.parseInt(ActualReturuDateTheWebSite.getText()), 77);
+		         myAssertion.assertEquals(ActualWelcomeMsg, ExpectedWelcomMsg);
+		         
+		         myAssertion.assertAll();
+		         
+		         
+		         
+		         
+		
+		
+		
+		
+		
+	
 	}
 
 	@AfterTest

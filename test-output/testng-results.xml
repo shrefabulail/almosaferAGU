@@ -1,57 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="15" passed="10" failed="0" skipped="0">
+<testng-results ignored="6" total="7" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-07T10:44:07 EET" name="Default suite" finished-at="2023-12-07T10:44:34 EET" duration-ms="26556">
+  <suite started-at="2023-12-13T12:21:48 EET" name="Default suite" finished-at="2023-12-13T12:21:55 EET" duration-ms="7489">
     <groups>
     </groups>
-    <test started-at="2023-12-07T10:44:07 EET" name="Default test" finished-at="2023-12-07T10:44:34 EET" duration-ms="26556">
+    <test started-at="2023-12-13T12:21:48 EET" name="Default test" finished-at="2023-12-13T12:21:55 EET" duration-ms="7489">
       <class name="MyTestCases">
-        <test-method is-config="true" signature="myBeforeTest()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:07 EET" name="myBeforeTest" finished-at="2023-12-07T10:44:15 EET" duration-ms="7164" status="PASS">
+        <test-method is-config="true" signature="myBeforeTest()[pri:0, instance:MyTestCases@6e1d8f9e]" started-at="2023-12-13T12:21:48 EET" name="myBeforeTest" finished-at="2023-12-13T12:21:55 EET" duration-ms="7213" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- myBeforeTest -->
-        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:15 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:16 EET" duration-ms="1736" status="PASS">
+        <test-method signature="CheckTheDateOfTheWebSite()[pri:0, instance:MyTestCases@6e1d8f9e]" started-at="2023-12-13T12:21:55 EET" name="CheckTheDateOfTheWebSite" finished-at="2023-12-13T12:21:55 EET" duration-ms="198" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [66] but found [14],
+expected [77] but found [15],
+expected [Let’s book your next trip!mmm] but found [Let’s book your next trip!]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [66] but found [14],
+expected [77] but found [15],
+expected [Let’s book your next trip!mmm] but found [Let’s book your next trip!]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at MyTestCases.CheckTheDateOfTheWebSite(MyTestCases.java:132)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
-        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:17 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:19 EET" duration-ms="2285" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
-        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:19 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:20 EET" duration-ms="1593" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
-        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:20 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:22 EET" duration-ms="1536" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
-        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:22 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:24 EET" duration-ms="2465" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
-        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:24 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:26 EET" duration-ms="1629" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
-        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:26 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:28 EET" duration-ms="1734" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
-        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:28 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:30 EET" duration-ms="2090" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
-        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:30 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:32 EET" duration-ms="2186" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
-        <test-method signature="ChangTheLanguageOfTheWebsiteRandomly()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:32 EET" name="ChangTheLanguageOfTheWebsiteRandomly" finished-at="2023-12-07T10:44:34 EET" duration-ms="1961" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ChangTheLanguageOfTheWebsiteRandomly -->
-        <test-method is-config="true" signature="myAfterTest()[pri:0, instance:MyTestCases@2783717b]" started-at="2023-12-07T10:44:34 EET" name="myAfterTest" finished-at="2023-12-07T10:44:34 EET" duration-ms="0" status="PASS">
+        </test-method> <!-- CheckTheDateOfTheWebSite -->
+        <test-method is-config="true" signature="myAfterTest()[pri:0, instance:MyTestCases@6e1d8f9e]" started-at="2023-12-13T12:21:55 EET" name="myAfterTest" finished-at="2023-12-13T12:21:55 EET" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- myAfterTest -->
