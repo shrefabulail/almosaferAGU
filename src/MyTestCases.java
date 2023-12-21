@@ -79,7 +79,7 @@ public class MyTestCases {
 
 	}
 
-	@Test(invocationCount = 10, enabled = false)
+	@Test(enabled= false)
 	public void ChangTheLanguageOfTheWebsiteRandomly() throws InterruptedException {
 		String[] myWebsite = { "https://www.almosafer.com/en", "https://www.almosafer.com/ar" };
 		Random rand = new Random();
@@ -101,7 +101,7 @@ public class MyTestCases {
 		}
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void CheckTheDateOfTheWebSite() {
 
 		LocalDate today = LocalDate.now();
@@ -125,6 +125,8 @@ public class MyTestCases {
 //		System.out.println(ActualDayAsNumber);
 //		System.out.println(ActualDisplayDayName);
 //					
+		
+			
 		// Expected Values that i am QA Expected
 		String ExpectedNameMonth = today.getMonth().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
 		System.out.println(ExpectedNameMonth);
@@ -135,6 +137,8 @@ public class MyTestCases {
 		Assert.assertEquals(ActualDayAsNumber, ExpectedDayAsNumber);
 		Assert.assertEquals(ActualNameOfDay, ExpectedNameOfDay);
 
+		
+				
 //		int expectedDepatureDate = today.plusDays(1).getDayOfMonth();
 //		int expectedReturnDate = today.plusDays(2).getDayOfMonth();
 //
@@ -149,7 +153,7 @@ public class MyTestCases {
 
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void HotelTabSwitch() throws InterruptedException {
 		Random rand = new Random();
 		String[] arabicCities = { "جدة", "دبي" };
@@ -159,9 +163,9 @@ public class MyTestCases {
 		int RandomEnglishCities = rand.nextInt(englishCities.length);
 
 		String[] myWebsite = { "https://www.almosafer.com/en", "https://www.almosafer.com/ar" };
-		Random rand1 = new Random();
+		
 
-		int randomNumber = rand1.nextInt(myWebsite.length);
+		int randomNumber = rand.nextInt(myWebsite.length);
 		driver.get(myWebsite[randomNumber]);
 		WebElement HotelTab = driver.findElement(By.id("uncontrolled-tab-example-tab-hotels"));
 		HotelTab.click();
@@ -208,9 +212,30 @@ public class MyTestCases {
 					.findElement(By.xpath("//span[@data-testid='HotelSearchResult__resultsFoundCount']")).getText();
 
 			Assert.assertEquals(resultsFound.contains("Found"), true);
+			driver.findElement(By.xpath("//button[normalize-space()='Lowest price']")).click();
+			Thread.sleep(2000);
 		}
+   
+		WebElement rightSection = driver.findElement(By.xpath("//div[@class='sc-htpNat KtFsv col-9']"));
+		List<WebElement> Prices = rightSection.findElements(By.className("Price__Value"));
 
+		int LowestPrice = 0;
+		int HighestPrice = 0;
+
+		for (int i = 0; i < Prices.size(); i++) {
+
+			LowestPrice = Integer.parseInt(Prices.get(0).getText());
+			HighestPrice = Integer.parseInt(Prices.get(Prices.size() - 1).getText());
+
+			Assert.assertEquals(LowestPrice < HighestPrice, true);
+
+		}
+		System.out.println(LowestPrice + " this is the lowest price ");
+		System.out.println(HighestPrice + " this is the highest price ");
+		
+		
 	}
+
 
 	@AfterTest
 	public void myAfterTest() {
