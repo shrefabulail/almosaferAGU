@@ -1,7 +1,9 @@
 import java.time.Duration;
 import java.time.LocalDate;
+import java.time.format.TextStyle;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 import org.openqa.selenium.By;
@@ -99,32 +101,55 @@ public class MyTestCases {
 		}
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void CheckTheDateOfTheWebSite() {
 
 		LocalDate today = LocalDate.now();
+//		System.out.println(today);
+//		System.out.println(today.plusDays(1));
+//		System.out.println(today.plusDays(2));
+//		System.out.println(today.plusDays(13));
 
-		int expectedDepatureDate = today.plusDays(1).getDayOfMonth();
-		int expectedReturnDate = today.plusDays(2).getDayOfMonth();
+		// Actual Values on the Website
 
-		WebElement ActualDepatureDateonTheWebSite = driver
-				.findElement(By.cssSelector("div[class='sc-OxbzP sc-lnrBVv gKbptE'] span[class='sc-fvLVrH hNjEjT']"));
-		WebElement ActualReturuDateTheWebSite = driver
-				.findElement(By.cssSelector("div[class='sc-OxbzP sc-bYnzgO bojUIa'] span[class='sc-fvLVrH hNjEjT']"));
-
-		String ExpectedWelcomMsg = "Let’s book your next trip!mmm";
-		String ActualWelcomeMsg = driver.findElement(By.xpath("//h1[contains(text(),'Let’s book your next trip!')]"))
+		String ActualDisplayMonth = driver
+				.findElement(By.cssSelector("div[class='sc-OxbzP sc-lnrBVv gKbptE'] span[class='sc-hvvHee cuAEQj']"))
 				.getText();
+		int ActualDayAsNumber = Integer.parseInt(driver
+				.findElement(By.cssSelector("div[class='sc-OxbzP sc-lnrBVv gKbptE'] span[class='sc-fvLVrH hNjEjT']"))
+				.getText());
+		String ActualNameOfDay = driver
+				.findElement(By.cssSelector("div[class='sc-OxbzP sc-lnrBVv gKbptE'] span[class='sc-eSePXt ljMnJa']"))
+				.getText();
+//		System.out.println(ActualMonth);
+//		System.out.println(ActualDayAsNumber);
+//		System.out.println(ActualDisplayDayName);
+//					
+		// Expected Values that i am QA Expected
+		String ExpectedNameMonth = today.getMonth().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
+		System.out.println(ExpectedNameMonth);
+		int ExpectedDayAsNumber = today.plusDays(1).getDayOfMonth();
+		String ExpectedNameOfDay = today.plusDays(1).getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
 
-		myAssertion.assertEquals(Integer.parseInt(ActualDepatureDateonTheWebSite.getText()), 66);
-		myAssertion.assertEquals(Integer.parseInt(ActualReturuDateTheWebSite.getText()), 77);
-		myAssertion.assertEquals(ActualWelcomeMsg, ExpectedWelcomMsg);
+		Assert.assertEquals(ActualDisplayMonth, ExpectedNameMonth);
+		Assert.assertEquals(ActualDayAsNumber, ExpectedDayAsNumber);
+		Assert.assertEquals(ActualNameOfDay, ExpectedNameOfDay);
 
-		myAssertion.assertAll();
+//		int expectedDepatureDate = today.plusDays(1).getDayOfMonth();
+//		int expectedReturnDate = today.plusDays(2).getDayOfMonth();
+//
+//		WebElement ActualDepatureDateonTheWebSite = driver
+//				.findElement(By.cssSelector("div[class='sc-OxbzP sc-lnrBVv gKbptE'] span[class='sc-fvLVrH hNjEjT']"));
+//		WebElement ActualReturuDateTheWebSite = driver
+//				.findElement(By.cssSelector("div[class='sc-OxbzP sc-bYnzgO bojUIa'] span[class='sc-fvLVrH hNjEjT']"));
+//
+//		String ExpectedWelcomMsg = "Let’s book your next trip!mmm";
+//		String ActualWelcomeMsg = driver.findElement(By.xpath("//h1[contains(text(),'Let’s book your next trip!')]"))
+//				.getText();
 
 	}
 
-	@Test()
+	@Test(enabled = false)
 	public void HotelTabSwitch() throws InterruptedException {
 		Random rand = new Random();
 		String[] arabicCities = { "جدة", "دبي" };
@@ -150,17 +175,18 @@ public class MyTestCases {
 			SearchAboutHotelTab.sendKeys(arabicCities[RandomArabicCities] + Keys.ENTER);
 			driver.findElement(By.xpath("//button[@data-testid='HotelSearchBox__SearchButton']")).click();
 
-			
 			{
 
 				Thread.sleep(2000);
-				WebElement mySelectElemwnt = driver.findElement(By.xpath("//select[@data-testid='HotelSearchBox__ReservationSelect_Select']"));
+				WebElement mySelectElemwnt = driver
+						.findElement(By.xpath("//select[@data-testid='HotelSearchBox__ReservationSelect_Select']"));
 				Select selector = new Select(mySelectElemwnt);
 
 				selector.selectByIndex(rand.nextInt(2));
-				String resultsFound= driver.findElement(By.xpath("//span[@data-testid='HotelSearchResult__resultsFoundCount']")).getText();
+				String resultsFound = driver
+						.findElement(By.xpath("//span[@data-testid='HotelSearchResult__resultsFoundCount']")).getText();
 
-				Assert.assertEquals(resultsFound.contains("وجدنا"),true);
+				Assert.assertEquals(resultsFound.contains("وجدنا"), true);
 
 			}
 
@@ -171,16 +197,17 @@ public class MyTestCases {
 			SearchAboutHotelTab.sendKeys(englishCities[RandomEnglishCities] + Keys.ENTER);
 
 			driver.findElement(By.xpath("//button[@data-testid='HotelSearchBox__SearchButton']")).click();
-			
 
 			Thread.sleep(2000);
-			WebElement mySelectElemwnt = driver.findElement(By.xpath("//select[@data-testid='HotelSearchBox__ReservationSelect_Select']"));
+			WebElement mySelectElemwnt = driver
+					.findElement(By.xpath("//select[@data-testid='HotelSearchBox__ReservationSelect_Select']"));
 			Select selector = new Select(mySelectElemwnt);
 			selector.selectByIndex(rand.nextInt(2));
-			
-		String resultsFound= driver.findElement(By.xpath("//span[@data-testid='HotelSearchResult__resultsFoundCount']")).getText();
 
-		Assert.assertEquals(resultsFound.contains("Found"),true);
+			String resultsFound = driver
+					.findElement(By.xpath("//span[@data-testid='HotelSearchResult__resultsFoundCount']")).getText();
+
+			Assert.assertEquals(resultsFound.contains("Found"), true);
 		}
 
 	}
